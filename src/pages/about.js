@@ -6,7 +6,7 @@ const About = () => {
     <div>
       <NavBar />
 
-      <h1>GeeksforGeeks is a Computer Science portal for geeks.</h1>
+      <h1>About us</h1>
     </div>
   );
 };

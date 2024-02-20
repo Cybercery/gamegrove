@@ -46,46 +46,41 @@ const Navbar = () => {
           />
           <div className="min-w-[2.5rem] min-h-[2.5rem] rounded-full bg-white mx-4  self-center"></div>
         </div>
-
-        {/* <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul> */}
       </div>
 
-      <div className="hidden lg:flex justify-start content-start bg-[#1456B8] py-[0.8rem] px-5 gap-14">
-        <div className="flex gap-2">
-          <img
-            src={Logo}
-            className="min-w-[4rem] max-w-[4rem] ps-[0.6rem]"
-            alt="logo"
-          />
-          <h1 className="font-mainFont font-[500] text-[1.3rem] text-white self-center ">
-            GAME GROVE
-          </h1>
+      <div className="hidden lg:flex justify-between content-between bg-[#1456B8] py-[0.8rem] px-5">
+        <div className="flex gap-12">
+          <div className="flex gap-2">
+            <img
+              src={Logo}
+              className="min-w-[4rem] max-w-[4rem] ps-[0.6rem]"
+              alt="logo"
+            />
+            <h1 className="font-mainFont font-[500] text-[1.3rem] text-white self-center ">
+              GAME GROVE
+            </h1>
+          </div>
+          <ul className="flex text-white no-underline text-[1.1rem] gap-4 self-center">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/genre">Genre</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/support">Support</Link>
+            </li>
+          </ul>
         </div>
-        <ul className="flex text-white no-underline gap-4 self-center">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/genre">Genre</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/support">Support</Link>
-          </li>
-        </ul>
-        <div className="min-w-[27rem] h-[2.5rem] bg-white self-center rounded-full"></div>
-        <div className="flex self-center gap-4">
-          <img src={Cart} className="w-6"></img>
-          <div className="min-w-[2.5rem] min-h-[2.5rem] bg-white rounded-full"></div>
+        <div className="flex gap-16">
+          <div className="min-w-[27rem] h-[2.5rem] bg-white self-center rounded-full"></div>
+          <div className="flex self-center gap-4">
+            <img src={Cart} className="w-6"></img>
+            <div className="min-w-[2.5rem] min-h-[2.5rem] bg-white rounded-full"></div>
+          </div>
         </div>
       </div>
     </div>
