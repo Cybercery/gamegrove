@@ -1,8 +1,12 @@
 import React from 'react'
+import NavBar from "../components/Navbar.js";
 
 const genre = () => {
   return (
-    <div>genre</div>
+    <div>
+      <NavBar />
+      genre
+    </div>
   )
 }
 

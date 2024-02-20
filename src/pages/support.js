@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import NavBar from "../components/Navbar.js";
 
 const support = () => {
   return (
-    <div>support</div>
-  )
-}
+    <div>
+      <NavBar />
+      support
+    </div>
+  );
+};
 
-export default support
+export default support;
