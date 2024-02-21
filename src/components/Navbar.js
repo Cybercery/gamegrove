@@ -1,12 +1,3 @@
-// import React from "react";
-
-// const Navbar = () => {
-//   return <div></div>;
-// };
-
-// export default Navbar;
-// Filename - "./components/Navbar.js
-
 import React from "react";
 import Logo from "../images/logo.svg";
 import Menu from "../images/menu.svg";
