@@ -1,4 +1,5 @@
 import React from "react";
+import { SearchBar } from "./SearchBar";
 import Logo from "../images/logo.svg";
 import Menu from "../images/menu.svg";
 import Cart from "../images/cart.svg";
@@ -67,7 +68,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex gap-16">
-          <div className="min-w-[27rem] h-[2.5rem] bg-white self-center rounded-full"></div>
+          <div className="self-center">
+            <SearchBar />
+          </div>
           <div className="flex self-center gap-4">
             <img src={Cart} className="w-6"></img>
             <div className="min-w-[2.5rem] min-h-[2.5rem] bg-white rounded-full"></div>
