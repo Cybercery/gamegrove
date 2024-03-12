@@ -44,6 +44,7 @@ const Support = () => {
           marginWidth={0}
           title="Newsletter subscribers"
         ></iframe>
+        {/* Remove the script tag from here */}
       </div>
     </div>
   );
