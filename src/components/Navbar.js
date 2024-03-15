@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="flex content-center justify-center ">
           <img
             src={Menu}
-            className="min-w-[1.5rem] max-w-[2rem]  "
+            className="min-w-[1.5rem] max-w-[2rem] ms-3  "
             alt="menu"
           />
           <img
@@ -61,6 +61,9 @@ const Navbar = () => {
             </li>
             <li>
               <Link to="/support">Support</Link>
+            </li>
+            <li>
+              <Link to="/genres">Genres</Link>
             </li>
           </ul>
         </div>

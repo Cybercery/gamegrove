@@ -16,6 +16,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages";
 import About from "./pages/about";
 import Support from "./pages/support";
+import Catalogue from "./pages/catalogue";
+import Genres from "./pages/genres";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/temp" element={<Catalogue />} />
+        <Route path="/genres" element={<Genres />} />
         <Route path="/support" element={<Support />} />
       </Routes>
     </Router>

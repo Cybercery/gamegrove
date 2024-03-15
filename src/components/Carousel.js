@@ -13,19 +13,19 @@ import MImg3 from "../images/mobile-carousal_images/img3.jpg";
 const Carouseel = () => {
   return (
     <div>
-      <div className="hidden lg:block self-center lg:h-[80vh] ">
+      <div className="hidden lg:block w-full self-center lg:h-[80vh] ">
         <Carousel slideInterval={5000} className="relative">
-          <img src={Img1} className="w-screen  h-screen " alt="..." />
-          <img src={Img2} className="w-screen  h-screen " alt="..." />
-          <img src={Img3} className="w-screen  h-screen " alt="..." />
-          <img src={Img4} className="w-screen  h-screen " alt="..." />
-          <img src={Img5} className="w-screen  h-screen " alt="..." />
+          <img src={Img1} className="w-full  h-full " alt="..." />
+          <img src={Img2} className="w-full  h-full " alt="..." />
+          <img src={Img3} className="w-full  h-full " alt="..." />
+          <img src={Img4} className="w-full  h-full " alt="..." />
+          <img src={Img5} className="w-full  h-full " alt="..." />
         </Carousel>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <h1 className="text-white font-mainFont font-[600] text-[2.5rem] text-center tracking-wide w-screen">
+          <h1 className="text-white font-mainFont font-[600] text-[2.9rem] text-center tracking-wide w-screen">
             Search Your One From Thousands of
           </h1>
-          <h1 className="text-[#297fff] font-mainFont font-[600] text-[2.5rem] text-center mb-7 tracking-wide">
+          <h1 className="text-[#297fff] font-mainFont font-[600] text-[2.9rem] text-center mb-7 tracking-wide">
             Games
           </h1>
           <div className="text-center">
@@ -38,11 +38,11 @@ const Carouseel = () => {
         </div>
       </div>
 
-      <div className="block h-[80vh] lg:hidden self-center  ">
+      <div className="block h-[80vh] w-screen lg:hidden self-center  ">
         <Carousel slideInterval={5000} className="relative">
-          <img src={MImg1} className="w-screen  h-screen  " alt="..." />
-          <img src={MImg2} className="w-screen  h-screen  " alt="..." />
-          <img src={MImg3} className="w-screen  h-screen " alt="..." />
+          <img src={MImg1} className="w-full  h-full  " alt="..." />
+          <img src={MImg2} className="w-full  h-full  " alt="..." />
+          <img src={MImg3} className="w-full  h-full " alt="..." />
           {/* <img src={MImg4} className='w-screen  h-screen ' alt="..." />
             <img src={MImg5} className='w-screen  h-screen ' alt="..." /> */}
         </Carousel>
