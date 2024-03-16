@@ -8,7 +8,7 @@ const About = () => {
 		<div className=" w-screen h-screen bg-[#181C24]">
 			<NavBar />
 
-			<div className=" bg-[#151617] w-full h-1/3 lg:h-1/4 lg:pt-10 lg:pb-10">
+			<div className=" bg-[#151617] w-full h-1/3 lg:h-1/3 lg:pt-10 lg:pb-10">
 				<div className="flex justify-center gap-3 lg:gap-5">
 					<h1 className="text-white text-4xl font-mainFont font-normal text-center pt-10 lg:text-6xl">
 						About
@@ -87,7 +87,7 @@ const About = () => {
 							<img
 								src={Ashmit}
 								alt="Ashmit photo"
-								className="w-1/3 h-1/3 lg: h-[12rem] w-[12rem] rounded-full"
+								className="w-1/3 h-1/3 lg:h-[12rem] lg:w-[12rem] rounded-full"
 							/>
 							<h1 className=" text-white text-2xl mt-5 font-regular">
 								Ashmit Jain
@@ -104,7 +104,7 @@ const About = () => {
 							<img
 								src={Ashmit}
 								alt="Ashmit photo"
-								className="w-1/3 h-1/3 lg: h-[12rem] w-[12rem] rounded-full"
+								className="w-1/3 h-1/3 lg:h-[12rem] lg:w-[12rem] rounded-full"
 							/>
 							<h1 className=" text-white text-2xl mt-5 font-regular">
 								Ashmit Jain
@@ -121,7 +121,7 @@ const About = () => {
 							<img
 								src={Ashmit}
 								alt="Ashmit photo"
-								className="w-1/3 h-1/3 lg: h-[12rem] w-[12rem] rounded-full"
+								className="w-1/3 h-1/3 lg:h-[12rem] lg:w-[12rem] rounded-full"
 							/>
 							<h1 className=" text-white text-2xl mt-5 font-regular">
 								Ashmit Jain
@@ -134,11 +134,12 @@ const About = () => {
 							</p>
 							<div className="bg-white w-1/2 mt-10 h-1 rounded-full lg:hidden"></div>
 						</div>
+						{/* shadow-[-10_14px_0_0_rgba(255,255,255,0.3)] */}
 						<div className="mt-10 flex flex-col items-center">
 							<img
 								src={Ashmit}
 								alt="Ashmit photo"
-								className="w-1/3 h-1/3 lg: h-[12rem] w-[12rem] rounded-full"
+								className="w-1/3 h-1/3 lg:h-[12rem] lg:w-[12rem] rounded-full "
 							/>
 							<h1 className=" text-white text-2xl mt-5 font-regular">
 								Ashmit Jain
