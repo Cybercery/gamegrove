@@ -68,9 +68,6 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex gap-16">
-          <div className="self-center">
-            <SearchBar />
-          </div>
           <div className="flex self-center gap-4">
             <img src={Cart} className="w-6"></img>
             <div className="min-w-[2.5rem] min-h-[2.5rem] bg-white rounded-full"></div>
