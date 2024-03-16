@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export const SearchBar = () => {
   const [input, setInput] = useState("");
+  const [results, setResults] = useState([]);
 
   const key = "18d8dc115d954615a6fe8522598e8a97";
 
@@ -16,7 +17,7 @@ export const SearchBar = () => {
             game.name.toLowerCase().includes(value.toLowerCase())
           );
         });
-        console.log(results);
+        setResults(results);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -28,16 +29,26 @@ export const SearchBar = () => {
     setInput(inputValue);
     fetchData(inputValue);
   };
-
   return (
-    <div>
-      <input
-        className="min-w-[35vw] min-h-[2.5rem] bg-white rounded-full"
-        type="text"
-        value={input}
-        onChange={handleInputChange}
-        placeholder="Search for games..."
-      />
+    <div className="flex justify-center">
+      <div className="relative flex flex-col w-[35vw]">
+        <input
+          className="w-full min-h-[2.5rem] bg-white rounded-full"
+          type="text"
+          value={input}
+          onChange={handleInputChange}
+          placeholder="Search for games..."
+        />
+        {results.length > 0 && (
+          <select className="absolute w-full mt-1 top-full rounded-full">
+            {results.map((result, index) => (
+              <option key={index} value={result.name}>
+                {result.name}
+              </option>
+            ))}
+          </select>
+        )}
+      </div>
     </div>
   );
 };
