@@ -10,14 +10,14 @@ export const SearchBar = () => {
     fetch(`https://api.rawg.io/api/games?key=${key}&search=${value}`)
       .then((response) => response.json())
       .then((json) => {
-        const results = Array.from(json.results).filter((game) => {
-          return (
+        const filteredResults = json.results.filter(
+          (game) =>
             game &&
             game.name &&
-            game.name.toLowerCase().includes(value.toLowerCase())
-          );
-        });
-        setResults(results);
+            game.name.toLowerCase().includes(value.toLowerCase()) &&
+            game.slug // Ensure each game has a slug
+        );
+        setResults(filteredResults);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -29,6 +29,11 @@ export const SearchBar = () => {
     setInput(inputValue);
     fetchData(inputValue);
   };
+
+  const handleOptionClick = (slug) => {
+    window.location.href = `/game/${slug}`;
+  };
+
   return (
     <div className="flex justify-center">
       <div className="relative flex flex-col w-[35vw]">
@@ -40,13 +45,17 @@ export const SearchBar = () => {
           placeholder="Search for games..."
         />
         {results.length > 0 && (
-          <select className="absolute w-full mt-1 top-full rounded-full">
+          <div className="absolute w-full mt-1 top-full rounded-lg bg-white shadow-md">
             {results.map((result, index) => (
-              <option key={index} value={result.name}>
+              <div
+                key={index}
+                onClick={() => handleOptionClick(result.slug)}
+                className="cursor-pointer px-4 py-2 hover:bg-gray-200"
+              >
                 {result.name}
-              </option>
+              </div>
             ))}
-          </select>
+          </div>
         )}
       </div>
     </div>
