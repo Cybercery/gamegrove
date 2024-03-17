@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const Genres = () => {
@@ -26,18 +27,20 @@ const Genres = () => {
 			<div className="flex flex-wrap gap-[2vw] justify-center content-center py-8">
 				{genres.map((genre) => {
 					return (
-						<div className="bg-[#2C2E33] w-[22vw] h-[30vh] rounded-3xl">
-							<div className="w-[20vw] h-[20vh] mx-auto  mt-5 rounded-xl">
+						<Link to={`/catalogue/${genre.slug}`} key={genre.id}>
+						<div className="bg-[#2C2E33] w-[22vw] h-[27vh] rounded-3xl">
+							<div className="w-[20vw] h-[20vh] mx-auto  pt-5 rounded-xl">
 								<img
 									src={genre.image_background}
 									alt=""
 									className="w-full h-full object-cover rounded-xl z-40"
 								/>
 							</div>
-							<h1 className="text-white font-mainFont ms-[2vw] mt-3 text-[1.5rem] font-light tracking-wide mb-5">
+							<h1 className="text-white font-mainFont ms-[2vw] mt-3 text-[1.5rem] font-light tracking-wide ">
 								{genre.name}
 							</h1>
 						</div>
+						</Link>
 					);
 				})}
 			</div>

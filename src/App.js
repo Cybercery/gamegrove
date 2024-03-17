@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/temp" element={<Catalogue />} />
+        <Route path="/catalogue/:slug" element={<Catalogue />} />
         <Route path="/genres" element={<Genres />} />
         <Route path="/support" element={<Support />} />
         <Route path="/game/:slug" element={<Gamepg />} />

@@ -60,11 +60,12 @@ const Navbar = () => {
 							<Link to="/about">About</Link>
 						</li>
 						<li>
-							<Link to="/support">Support</Link>
-						</li>
-						<li>
 							<Link to="/genres">Genres</Link>
 						</li>
+						<li>
+							<Link to="/support">Support</Link>
+						</li>
+						
 					</ul>
 				</div>
 				<div className="flex gap-16">
