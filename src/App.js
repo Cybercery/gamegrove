@@ -29,7 +29,7 @@ function App() {
         <Route path="/temp" element={<Catalogue />} />
         <Route path="/genres" element={<Genres />} />
         <Route path="/support" element={<Support />} />
-        <Route path="/game" element={<Gamepg />} />
+        <Route path="/game/:slug" element={<Gamepg />} />
       </Routes>
     </Router>
   );
