@@ -66,14 +66,14 @@ const Gamepg = () => {
       </div>
       
       <div className='bg-[#101216] w-screen py-5'>
-        {/* <h1 className='text-white font-mainFont text-3xl font-light text-center'>Screenshots</h1>
+        <h1 className='text-white font-mainFont text-3xl font-light text-start'>Screenshots</h1>
         <div className='flex flex-row gap-5 justify-center content-center mt-5'>
-          {game.short_screenshots.slice(0, 4).map(screenshot => (
+          {/* {game.short_screenshots.slice(0, 4).map(screenshot => (
             <img key={screenshot.id} src={screenshot.image} alt={game.name} className='w-[20vw] h-[15vh] rounded-xl' />
             ))
-          }
-        </div> */}
-      </div>
+          } */}
+        </div>
+      </div>  
     </div>
   );
 };
