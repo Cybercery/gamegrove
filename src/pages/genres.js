@@ -16,7 +16,7 @@ const Genres = () => {
   return (
 		<div className="bg-[#181C24]">
 			<Navbar />
-			<div className="flex mt-10">
+			<div className="flex mt-10 justify-center">
 				<h1 className="text-white text-4xl font-mainFont font-normal text-center lg:text-6xl ms-6 lg:ms-12">
 					Game
 				</h1>
@@ -28,18 +28,18 @@ const Genres = () => {
 				{genres.map((genre) => {
 					return (
 						<Link to={`/catalogue/${genre.slug}`} key={genre.id}>
-						<div className="bg-[#2C2E33] w-[92vw] min-h-[20vh] lg:w-[22vw] lg:h-[27vh] rounded-3xl">
-							<div className="w-[86vw] h-[20vh] lg:w-[20vw] lg:h-[20vh] mx-auto  pt-5 rounded-xl">
-								<img
-									src={genre.image_background}
-									alt=""
-									className="w-full h-full object-cover rounded-xl z-40"
-								/>
+							<div className="bg-[#2C2E33] w-[23rem] min-h-[20vh] lg:w-[22vw] lg:h-[27vh] rounded-3xl">
+								<div className="w-[20.5rem] h-[20vh] lg:w-[20vw] lg:h-[20vh] mx-auto pt-5 rounded-[3rem]">
+									<img
+										src={genre.image_background}
+										alt=""
+										className="w-full h-full object-cover rounded-[1rem] z-40"
+									/>
+								</div>
+								<h1 className="text-white font-mainFont font-bold p-4 text-[1.5rem] tracking-wide text-center">
+									{genre.name}
+								</h1>
 							</div>
-							<h1 className="text-white font-mainFont ms-[2vw] p-4 text-[1.5rem] font-light tracking-wide ">
-								{genre.name}
-							</h1>
-						</div>
 						</Link>
 					);
 				})}

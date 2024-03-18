@@ -1,91 +1,102 @@
-import React, {useState} from 'react';
-import {  signInWithEmailAndPassword   } from 'firebase/auth';
-import { auth } from '../firebase';
-import { NavLink, useNavigate } from 'react-router-dom'
-import BgVideo from '../images/Bg_video.mp4'
- 
-const Login = () => {
-    const navigate = useNavigate();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-       
-    const onLogin = (e) => {
-        e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            navigate("/home")
-            console.log(user);
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage)
-        });
-       
-    }
- 
-    return(
-      <>
-      <video autoPlay muted loop id="myVideo" className='absolute z-50 w-screen h-screen object-cover'>
-        <source src="" type="video/mp4"  />
-      </video>
-        <main className='bg-[#181C24] h-screen w-screen flex justify-center content-center relative'>    
-          
-          <section className='self-center bg-transparent border-[0.1rem]  w-[95vw] lg:w-[30vw] h-[45vh] lg:h-[60vh] rounded-3xl felx justify-center content-center z-[60] backdrop-opacity-70'>
-            <div className='bg-red-500 w-[50%] mx-auto'>                                            
-              <p> FocusApp </p>                       
-                               
-              <form>                                              
-                <div>
-                  <label htmlFor="email-address">
-                    Email address
-                  </label>
-                  <input
-                    id="email-address"
-                    name="email"
-                    type="email"                                    
-                    required                                                                                
-                    placeholder="Email address"
-                    onChange={(e)=>setEmail(e.target.value)}
-                  />
-                </div>
+import React, { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
+import { NavLink, useNavigate } from "react-router-dom";
+import BgVideo from "../images/Bg_video.mp4";
 
-                <div>
-                  <label htmlFor="password">
-                    Password
-                  </label>
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"                                    
-                    required                                                                                
-                    placeholder="Password"
-                    onChange={(e)=>setPassword(e.target.value)}
-                  />
-                </div>
-                          
-                <div>
-                  <button                                    
-                    onClick={onLogin}                                        
-  >      
-                    Login                                                                  
-                  </button>
-                </div>                               
-              </form>
-               
-              <p className="text-sm text-white text-center">
-                No account yet? {' '}
-                <NavLink to="/signup">
-                  Sign up
-                </NavLink>
-              </p>           
-            </div>
-          </section>
-        </main>
-      </>
-    )
-}
- 
-export default Login
+const Login = () => {
+	const navigate = useNavigate();
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+
+	const onLogin = (e) => {
+		e.preventDefault();
+		signInWithEmailAndPassword(auth, email, password)
+			.then((userCredential) => {
+				// Signed in
+				const user = userCredential.user;
+				navigate("/home");
+				console.log(user);
+			})
+			.catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+				console.log(errorCode, errorMessage);
+			});
+	};
+
+	return (
+		<>
+			{/* <video
+					autoPlay
+					muted
+					loop
+					id="myVideo"
+					classNameName="absolute z-50 w-screen h-screen object-cover"
+				>
+					<source src="" type="video/mp4" />
+				</video> */}
+			<div
+				name="container"
+				className="w-screen h-screen bg-slate-600 flex justify-center content-center relative "
+			>
+				<div className="bg-transparent w-1/4 p-[2.5rem] border-[0.1rem] rounded-xl my-auto font-mainFont">
+					<form action="" name="myForm" className="flex flex-col gap-[1.5rem]">
+						<div className="text-[2.5rem]">
+							<h1 className="text-center">Login</h1>
+						</div>
+						<div>
+							<input
+								type="email-address"
+								name="email"
+								id="email"
+								placeholder="Email address"
+								onChange={(e) => setEmail(e.target.value)}
+								className=" bg-transparent border-[0.1rem] rounded-full h-[3rem] w-full placeholder:pl-[1.5rem] placeholder:text-[#E5E4E4]"
+							></input>
+						</div>
+						<div>
+							<input
+								type="password"
+								name="password"
+								id="password"
+								placeholder="Password"
+								onChange={(e) => setPassword(e.target.value)}
+								required
+								className=" bg-transparent border-[0.1rem] rounded-full h-[3rem] w-full placeholder:pl-[1.5rem] placeholder:text-[#E5E4E4]"
+							></input>
+						</div>
+						<div className="flex flex-row justify-between">
+							<div>
+								<input type="checkbox" name="" id="chkbox"></input>
+								<label for="chkbox" className=" text-sm font-light">
+									Remember me
+								</label>
+							</div>
+							<a
+								href="https://fonts.google.com/specimen/Poppins"
+								className=" text-sm font-light"
+							>
+								<label for="">Forgot password?</label>
+							</a>
+						</div>
+						<div className="flex flex-col gap-[1rem]">
+							<button
+								onClick={onLogin}
+								className="bg-white text-black font-normal rounded-full h-[2.5rem] w-full"
+							>
+								Login
+							</button>
+							<div className="flex flex-row justify-between text-sm font-light">
+								<label for="Register">Don't have an account? </label>
+								<NavLink to="/signup">Sign up</NavLink>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</>
+	);
+};
+
+export default Login;
