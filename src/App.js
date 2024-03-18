@@ -19,6 +19,7 @@ import Support from "./pages/support";
 import Catalogue from "./pages/catalogue";
 import Genres from "./pages/genres";
 import Gamepg from "./pages/game";
+import Login from "./pages/login";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/genres" element={<Genres />} />
         <Route path="/support" element={<Support />} />
         <Route path="/game/:slug" element={<Gamepg />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );

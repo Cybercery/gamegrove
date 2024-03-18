@@ -1,10 +1,9 @@
 import React from "react";
 import NavBar from "../components/Navbar.js";
 
-const About = () => {
+const Login = () => {
 	return (
 		<div name="container" class="w-screen h-screen flex justify-center">
-			<NavBar />
 			<video
 				autoplay
 				muted
@@ -155,4 +154,4 @@ const About = () => {
 	);
 };
 
-export default About;
+export default Login;
