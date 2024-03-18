@@ -4,8 +4,6 @@ import Navbar from '../components/Navbar';
 
 // Gamepg.js
 
-
-
 const Gamepg = () => {
   const { slug } = useParams();
   const [game, setGame] = useState(null);
@@ -62,8 +60,8 @@ const Gamepg = () => {
     //  console.log(game);
   // console.log(screenshots);
   // console.log(trailers);
-    // console.log(game);
-    console.log(game.platforms[0].requirements.minimum);
+    console.log(game);
+    // console.log(game.platforms[0].requirements.minimum);
 
 
     
@@ -120,6 +118,11 @@ const Gamepg = () => {
       <div className='bg-[#101216] w-screen py-5 mt-5'>
           <h1 className='text-white font-mainFont text-3xl font-light text-start ms-4'>Requirements</h1>
           <p className='text-white text-[0.8rem] w-[45ch] ms-5 mt-3'>{game.platforms[0].requirements.minimum.split('Additional Notes')[0]}</p>
+          <p className='text-white text-[0.8rem] w-[45ch] ms-5 mt-3'>{game.platforms[0].requirements.recommended.split('Additional Notes')[0]}</p>
+          <h1 className='text-white font-mainFont text-3xl font-light text-start ms-4'>Metacritic Rating: {game.metacritic}</h1>
+          <h1 className='text-white font-mainFont text-3xl font-light text-start ms-4'>Rating: {game.rating}</h1>
+          <h1 className='text-white font-mainFont text-3xl font-light text-start ms-4'>Publisher : {game.publishers[0].name}</h1>
+
       </div>
     </div>
   );
