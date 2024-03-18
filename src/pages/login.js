@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { NavLink, useNavigate } from "react-router-dom";
 import BgVideo from "../images/Bg_video.mp4";
+import Img3 from "../images/carousal_images/img3.jpg";
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -27,32 +28,29 @@ const Login = () => {
 
 	return (
 		<>
-			{/* <video
-					autoPlay
-					muted
-					loop
-					id="myVideo"
-					classNameName="absolute z-50 w-screen h-screen object-cover"
-				>
-					<source src="" type="video/mp4" />
-				</video> */}
+			<img
+				id="image"
+				className="absolute z-0 w-screen h-screen object-cover"
+				src={Img3}
+			></img>
+
 			<div
 				name="container"
-				className="w-screen h-screen bg-slate-600 flex justify-center content-center relative "
+				className="w-screen h-screen bg-slate-600 flex justify-center content-center relative text-white "
 			>
-				<div className="bg-transparent w-1/4 p-[2.5rem] border-[0.1rem] rounded-xl my-auto font-mainFont">
+				<div className="bg-transparent backdrop-blur-lg w-full lg:w-1/4 p-[2.5rem] border-[0.1rem] rounded-xl my-auto font-mainFont">
 					<form action="" name="myForm" className="flex flex-col gap-[1.5rem]">
 						<div className="text-[2.5rem]">
-							<h1 className="text-center">Login</h1>
+							<h1 className="text-center text-white pb-2  ">Login</h1>
 						</div>
 						<div>
 							<input
 								type="email-address"
 								name="email"
 								id="email"
-								placeholder="Email address"
+								placeholder="   Email address"
 								onChange={(e) => setEmail(e.target.value)}
-								className=" bg-transparent border-[0.1rem] rounded-full h-[3rem] w-full placeholder:pl-[1.5rem] placeholder:text-[#E5E4E4]"
+								className=" bg-transparent border-[0.1rem] border-[#757576] rounded-full h-[3rem] w-full placeholder:pl-[1.5rem] placeholder:text-[#E5E4E4]"
 							></input>
 						</div>
 						<div>
@@ -63,14 +61,14 @@ const Login = () => {
 								placeholder="Password"
 								onChange={(e) => setPassword(e.target.value)}
 								required
-								className=" bg-transparent border-[0.1rem] rounded-full h-[3rem] w-full placeholder:pl-[1.5rem] placeholder:text-[#E5E4E4]"
+								className=" bg-transparent border-[0.1rem] border-[#757576] rounded-full h-[3rem] w-full placeholder:pl-[1.5rem] placeholder:text-[#E5E4E4]"
 							></input>
 						</div>
 						<div className="flex flex-row justify-between">
 							<div>
 								<input type="checkbox" name="" id="chkbox"></input>
 								<label for="chkbox" className=" text-sm font-light">
-									Remember me
+									&#160; Remember me
 								</label>
 							</div>
 							<a
@@ -83,11 +81,11 @@ const Login = () => {
 						<div className="flex flex-col gap-[1rem]">
 							<button
 								onClick={onLogin}
-								className="bg-white text-black font-normal rounded-full h-[2.5rem] w-full"
+								className="bg-white text-black font-normal rounded-full h-[3rem] w-full"
 							>
 								Login
 							</button>
-							<div className="flex flex-row justify-between text-sm font-light">
+							<div className="flex flex-row justify-between text-sm font-light pt-3">
 								<label for="Register">Don't have an account? </label>
 								<NavLink to="/signup">Sign up</NavLink>
 							</div>
