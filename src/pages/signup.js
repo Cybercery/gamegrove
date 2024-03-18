@@ -25,7 +25,11 @@ const SignUp = () => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
 				console.log(errorCode, errorMessage);
-				// ..
+				// Set the input box border color to red
+				document.getElementById("emailInput").style.borderColor = "red";
+				document.getElementById("passwordInput").style.borderColor = "red";
+				// Show the error message in a popup box
+				alert(errorMessage);
 			});
 	};
 
@@ -50,6 +54,7 @@ const SignUp = () => {
 							<input
 								type="email"
 								label="Email address"
+								id="emailInput"
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
 								required
@@ -60,6 +65,7 @@ const SignUp = () => {
 						<div>
 							<input
 								type="password"
+								id="passwordInput"
 								label="Create password"
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}

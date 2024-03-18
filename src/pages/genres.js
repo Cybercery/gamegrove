@@ -50,4 +50,4 @@ const Genres = () => {
 	);
 };
 
-export default Genres
+export default Genres;

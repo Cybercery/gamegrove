@@ -38,4 +38,4 @@ const GOTTpg = () => {
   )
 }
 
-export default GOTTpg
+export default GOTTpg;

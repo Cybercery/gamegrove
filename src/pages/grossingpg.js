@@ -38,4 +38,4 @@ const GrossingPg = () => {
   )
 }
 
-export default GrossingPg
+export default GrossingPg;

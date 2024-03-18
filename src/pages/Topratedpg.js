@@ -38,4 +38,4 @@ const TopRatedPg = () => {
   )
 }
 
-export default TopRatedPg
+export default TopRatedPg;

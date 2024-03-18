@@ -23,6 +23,8 @@ const Login = () => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
 				console.log(errorCode, errorMessage);
+				document.getElementById("email").style.borderColor = "red";
+				document.getElementById("password").style.borderColor = "red";
 			});
 	};
 

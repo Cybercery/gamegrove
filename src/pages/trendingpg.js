@@ -40,4 +40,4 @@ const TreandingPg = () => {
   )
 }
 
-export default TreandingPg
+export default TreandingPg;
