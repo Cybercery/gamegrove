@@ -22,6 +22,11 @@ import Gamepg from "./pages/game";
 import Cart from "./pages/cart";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
+import TreandingPg from "./pages/trendingpg";
+import GOTTpg from "./pages/gotypg";
+import TopRatedPg from "./pages/Topratedpg";
+import GrossingPg from "./pages/grossingpg";
+
 
 function App() {
   return (
@@ -36,6 +41,10 @@ function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/game/:slug" element={<Gamepg />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/trending" element={<TreandingPg />} />
+        <Route path="/toprated" element={<TopRatedPg />} />
+        <Route path="/grossing" element={<GrossingPg />} />
+        <Route path="/GOTY" element={<GOTTpg />} />
         
       </Routes>
     </Router>

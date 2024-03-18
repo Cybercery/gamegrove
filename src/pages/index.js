@@ -52,7 +52,7 @@ const Home = () => {
         <Carouseel />
         <div className='flex content-between justify-between max-w-full mx-4 lg:mx-10'>
           <h1 className='font-mainFont text-2xl lg:text-3xl mt-6 lg:mt-15   text-white font-light'>Treanding Games</h1>
-          <a href='/temp' className='text-white font-mainFont self-center text-[1rem] lg:text-[1.2rem] opacity-55 font-light mt-6 lg:mt-12' viewall={"https://api.rawg.io/api/games?key=407a808173854a60b9448adc36f88cf9"}  >View All</a>
+          <a href='/trending' className='text-white font-mainFont self-center text-[1rem] lg:text-[1.2rem] opacity-55 font-light mt-6 lg:mt-12'  >View All</a>
         </div>
         
         <div className='justify-center content-center mt-5 gap-[5vw] flex pb-5 flex-wrap '>
@@ -67,7 +67,7 @@ const Home = () => {
 
         <div className='flex content-between justify-between max-w-full mx-4 lg:mx-10'>
           <h1 className='font-mainFont text-2xl lg:text-3xl mt-6 lg:mt-15   text-white font-light'>2023 Top Grossing Games</h1>
-          <a href='/temp' className='text-white font-mainFont self-center text-[1rem] lg:text-[1.2rem] opacity-55 font-light mt-6 lg:mt-12'  >View All</a>
+          <a href='/grossing' className='text-white font-mainFont self-center text-[1rem] lg:text-[1.2rem] opacity-55 font-light mt-6 lg:mt-12'  >View All</a>
         </div>
         <div className='justify-center content-center mt-5 gap-[5vw] flex pb-5 flex-wrap '>
           {
@@ -81,7 +81,7 @@ const Home = () => {
         
         <div className='flex content-between justify-between max-w-full mx-4 lg:mx-10'>
           <h1 className='font-mainFont text-2xl lg:text-3xl mt-6 lg:mt-15   text-white font-light'>Top Rated Games</h1>
-          <a href='/temp' className='text-white font-mainFont self-center text-[1rem] lg:text-[1.2rem] opacity-55 font-light mt-6 lg:mt-12'  >View All</a>
+          <a href='/toprated' className='text-white font-mainFont self-center text-[1rem] lg:text-[1.2rem] opacity-55 font-light mt-6 lg:mt-12'  >View All</a>
         </div>
         <div className='justify-center content-center mt-5 gap-[5vw] flex pb-5 flex-wrap '>
           {
@@ -95,7 +95,7 @@ const Home = () => {
 
         <div className='flex content-between justify-between max-w-full mx-4 lg:mx-10'>
           <h1 className='font-mainFont text-2xl lg:text-3xl mt-6 lg:mt-15   text-white font-light'>Game Of The Year</h1>
-          <a href='/temp' className='text-white font-mainFont self-center text-[1rem] lg:text-[1.2rem] opacity-55 font-light mt-6 lg:mt-12'  >View All</a>
+          <a href='/GOTY' className='text-white font-mainFont self-center text-[1rem] lg:text-[1.2rem] opacity-55 font-light mt-6 lg:mt-12'  >View All</a>
         </div>
         <div className='justify-center content-center mt-5 gap-[5vw] flex pb-5 flex-wrap '>
           {
