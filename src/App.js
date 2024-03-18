@@ -19,7 +19,7 @@ import Support from "./pages/support";
 import Catalogue from "./pages/catalogue";
 import Genres from "./pages/genres";
 import Gamepg from "./pages/game";
-
+import Cart from "./pages/cart";
 function App() {
   return (
     <Router>
@@ -30,6 +30,7 @@ function App() {
         <Route path="/genres" element={<Genres />} />
         <Route path="/support" element={<Support />} />
         <Route path="/game/:slug" element={<Gamepg />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
   );
