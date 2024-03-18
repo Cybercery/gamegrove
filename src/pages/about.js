@@ -2,7 +2,12 @@ import React from "react";
 import NavBar from "../components/Navbar.js";
 import Icon1 from "../images/Vector.svg";
 import Icon2 from "../images/controller.svg";
-import Ashmit from "../images/About-us-images/AshmitJain.jpg";
+import Ashmit from "../images/About-us-images/Ashmit.png";
+import Kshitij from "../images/About-us-images/Kshitij.png";
+import Akshaj from "../images/About-us-images/Askhaj.jpg";
+import Soham from "../images/About-us-images/Soham.jpg";
+import Footer from "../components/Footer.js";
+
 const About = () => {
 	return (
 		<div className=" w-screen h-screen bg-[#181C24]">
@@ -81,16 +86,16 @@ const About = () => {
 					{/* images and circles div: */}
 					<div
 						name="People"
-						className=" lg:w-[90rem] lg:mt-10 lg:flex lg:justify-between"
+						className=" lg:w-[90rem] lg:mt-10 lg:flex lg:justify-between pb-[5rem]"
 					>
 						<div className="mt-10 flex flex-col items-center">
 							<img
-								src={Ashmit}
+								src={Soham}
 								alt="Ashmit photo"
 								className="w-1/3 h-1/3 lg:h-[12rem] lg:w-[12rem] rounded-full"
 							/>
 							<h1 className=" text-white text-2xl mt-5 font-regular">
-								Ashmit Jain
+								Soham Doiphode
 							</h1>
 							<p className="text-center text-white w-[20rem] font-thin mt-4 ">
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -102,12 +107,12 @@ const About = () => {
 						</div>
 						<div className="mt-10 flex flex-col items-center">
 							<img
-								src={Ashmit}
+								src={Akshaj}
 								alt="Ashmit photo"
 								className="w-1/3 h-1/3 lg:h-[12rem] lg:w-[12rem] rounded-full"
 							/>
 							<h1 className=" text-white text-2xl mt-5 font-regular">
-								Ashmit Jain
+								Akshaj Ramakrishnan
 							</h1>
 							<p className="text-center text-white w-[20rem] font-thin mt-4 ">
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -137,12 +142,12 @@ const About = () => {
 						{/* shadow-[-10_14px_0_0_rgba(255,255,255,0.3)] */}
 						<div className="mt-10 flex flex-col items-center">
 							<img
-								src={Ashmit}
+								src={Kshitij}
 								alt="Ashmit photo"
 								className="w-1/3 h-1/3 lg:h-[12rem] lg:w-[12rem] rounded-full "
 							/>
 							<h1 className=" text-white text-2xl mt-5 font-regular">
-								Ashmit Jain
+								Kshitij Joshi
 							</h1>
 							<p className="text-center text-white w-[20rem] font-thin mt-4 ">
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -155,6 +160,7 @@ const About = () => {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</div>
 	);
 };

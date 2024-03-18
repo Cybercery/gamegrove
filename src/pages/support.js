@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import NavBar from "../components/Navbar.js";
 import CallUs from "../images/CallUs.svg";
 import Mail from "../images/Mail.svg";
-import { Footer } from "flowbite-react";
+import Footer from "../components/Footer";
 
 const Support = () => {
 	useEffect(() => {
@@ -49,6 +49,7 @@ const Support = () => {
 				></iframe>
 				{/* Remove the script tag from here */}
 			</div>
+			<Footer />
 		</div>
 	);
 };

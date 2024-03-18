@@ -2,18 +2,19 @@ import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import Footer from "../components/Footer";
 
 const Genres = () => {
-    let [genres, setGenres] = useState([]);
-    useEffect(() => {
-        fetch("https://api.rawg.io/api/genres?key=407a808173854a60b9448adc36f88cf9")
-        .then((response) => response.json())
-        .then((data) => {
-            setGenres(data.results);
-            console.log(data);
-      });
-    }, []);
-  return (
+	let [genres, setGenres] = useState([]);
+	useEffect(() => {
+		fetch("https://api.rawg.io/api/genres?key=407a808173854a60b9448adc36f88cf9")
+			.then((response) => response.json())
+			.then((data) => {
+				setGenres(data.results);
+				console.log(data);
+			});
+	}, []);
+	return (
 		<div className="bg-[#181C24]">
 			<Navbar />
 			<div className="flex mt-10 justify-center">
@@ -36,7 +37,7 @@ const Genres = () => {
 										className="w-full h-full object-cover rounded-[1rem] z-40"
 									/>
 								</div>
-								<h1 className="text-white font-mainFont font-bold p-4 text-[1.5rem] tracking-wide text-center">
+								<h1 className="text-white font-mainFont font-regular	 p-4 text-[1.5rem] tracking-wide text-center">
 									{genre.name}
 								</h1>
 							</div>
@@ -44,8 +45,9 @@ const Genres = () => {
 					);
 				})}
 			</div>
+			<Footer />
 		</div>
 	);
-}
+};
 
 export default Genres
