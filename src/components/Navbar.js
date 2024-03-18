@@ -31,7 +31,7 @@ const Navbar = () => {
           </h1>
           <ul className="hidden lg:flex font-mainFont text-white no-underline text-[1.1rem] gap-7 self-center ms-8 ">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/home">Home</Link>
             </li>
             <li>
               <Link to="/about">About</Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
         <div className="flex ">
           <ul className="flex flex-col font-mainFont text-white no-underline text-[1.1rem] gap-7 self-center lg:hidden">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/home">Home</Link>
             </li>
             <li>
               <Link to="/about">About</Link>

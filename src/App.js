@@ -21,19 +21,22 @@ import Genres from "./pages/genres";
 import Gamepg from "./pages/game";
 import Cart from "./pages/cart";
 import Login from "./pages/login";
+import SignUp from "./pages/signup";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route exact path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/catalogue/:slug" element={<Catalogue />} />
         <Route path="/genres" element={<Genres />} />
         <Route path="/support" element={<Support />} />
         <Route path="/game/:slug" element={<Gamepg />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={<Login />} />
+        
       </Routes>
     </Router>
   );
