@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
 	return (
-		<div>
+		<div className="bg-[#181C24] w-screen h-auto">
 			<div className="bg-[#2C2E33] rounded-t-3xl h-[25rem] flex flex-col justify-center gap-8">
 				<p className=" font-mainFont text-white text-2xl text-center">
 					Connect with Us
