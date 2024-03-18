@@ -13,6 +13,7 @@
 
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Home from "./pages";
 import About from "./pages/about";
 import Support from "./pages/support";
@@ -27,8 +28,15 @@ import GOTTpg from "./pages/gotypg";
 import TopRatedPg from "./pages/Topratedpg";
 import GrossingPg from "./pages/grossingpg";
 
-
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    // Load cart items from localStorage when the component mounts
+    const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setCartItems(storedCartItems);
+  }, []);
+
   return (
     <Router>
       <Routes>
@@ -39,13 +47,15 @@ function App() {
         <Route path="/catalogue/:slug" element={<Catalogue />} />
         <Route path="/genres" element={<Genres />} />
         <Route path="/support" element={<Support />} />
-        <Route path="/game/:slug" element={<Gamepg />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/game/:slug"
+          element={<Gamepg setCartItems={setCartItems} cartItems={cartItems} />}
+        />
+        <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/trending" element={<TreandingPg />} />
         <Route path="/toprated" element={<TopRatedPg />} />
         <Route path="/grossing" element={<GrossingPg />} />
         <Route path="/GOTY" element={<GOTTpg />} />
-        
       </Routes>
     </Router>
   );

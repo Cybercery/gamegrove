@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export const SearchBar = () => {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
+  const dropdownRef = useRef(null);
 
   const key = "18d8dc115d954615a6fe8522598e8a97";
 
@@ -34,6 +35,19 @@ export const SearchBar = () => {
     window.location.href = `/game/${slug}`;
   };
 
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setResults([]); // Close the dropdown
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="flex justify-center">
       <div className="relative flex flex-col w-[35vw]">
@@ -45,7 +59,10 @@ export const SearchBar = () => {
           placeholder="Search for games..."
         />
         {results.length > 0 && (
-          <div className="absolute w-full mt-1 top-full rounded-lg bg-white shadow-md">
+          <div
+            ref={dropdownRef}
+            className="absolute w-full mt-1 top-full rounded-lg bg-white shadow-md z-10"
+          >
             {results.map((result, index) => (
               <div
                 key={index}
