@@ -10,7 +10,9 @@ const Gamepg = () => {
   const { slug } = useParams();
   const [game, setGame] = useState(null);
   const [screenshots, setScreenshots] = useState(null);
-  console.log(slug);
+  const [requirements, setRequirements] = useState(null);
+  // const [trailers, setTrailers] = useState(null);
+  // console.log(slug);
   useEffect(() => {
     // Fetch game data based on slug
     fetch(`https://api.rawg.io/api/games/${slug}?key=407a808173854a60b9448adc36f88cf9`)
@@ -31,6 +33,26 @@ const Gamepg = () => {
       })
   }, [slug]);
 
+  useEffect(() => {
+    fetch(`https://api.rawg.io/api/games/${slug}?key=407a808173854a60b9448adc36f88cf9`)
+      .then(response => response.json())
+      .then(data => {
+        // Handle the received game data
+        setRequirements(data);
+      })
+  }, [slug]);
+
+  // useEffect(() => {
+  //   fetch(`https://api.rawg.io/api/games/${slug}/movies?key=407a808173854a60b9448adc36f88cf9`)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       // Handle the received game data
+  //       setTrailers(data);
+  //     })
+  // }, [slug]);
+
+
+
   if (!game) {
     return <div>Loading...</div>;
   }
@@ -38,18 +60,24 @@ const Gamepg = () => {
   // console.log(game.short_screenshots);
     //  console.log(grand-theft-auto-v.screenshots);
     //  console.log(game);
-  console.log(screenshots);
+  // console.log(screenshots);
+  // console.log(trailers);
+    // console.log(game);
+    console.log(game.platforms[0].requirements.minimum);
+
+
+    
+
   return (
     <div className='bg-[#181C24] w-screen min-h-screen'>
       <Navbar />
       <div className='flex flex-col mt-8 content-center justify-center lg:flex-row lg:content-center lg:justify-center gap-[7vw] lg:mt-[5rem]  '>
-        {/* <img src={game.background_image} alt={game.name} className='w-[85vw] h-[25vh] self-center lg:w-[45vw] lg:h-[50vh] rounded-xl' /> */}
-        <div className='w-[85vw] h-[25vh] self-center lg:w-[45vw] lg:h-[50vh] rounded-xl'>
+        <img src={game.background_image} alt={game.name} className='w-[85vw] h-[25vh] self-center lg:w-[45vw] lg:h-[50vh] rounded-xl' />
+        {/* <div className='w-[85vw] h-[25vh] self-center lg:w-[45vw] lg:h-[50vh] rounded-xl'>
           <video controls className='w-full h-full'>
-            <source src={game.movies} type='video/mp4' />
-            Your browser does not support the video tag.
+            <source src={trailers.results[0].data.max} type='video/mp4' />
           </video>
-        </div>
+        </div> */}
           <div className='flex flex-col'>
           <div className='bg-[#2C2E33] rounded-3xl w-[85vw] min-h-[30vh] lg:w-[35vw] lg:min-h-[30vh] self-center lg:self-start py-7'>
             <div className='flex content-between justify-between mx-7 '>
@@ -79,15 +107,20 @@ const Gamepg = () => {
           </div>
       </div>
       
-      <div className='bg-[#101216] w-screen py-5'>
+      <div className='bg-[#101216] w-screen py-5 mt-5'>
         <h1 className='text-white font-mainFont text-3xl font-light text-start'>Screenshots</h1>
-        <div className='flex flex-row gap-5 justify-center content-center mt-5'>
+        <div className='flex flex-row gap-[5vh] lg:gap-[2vw] justify-center flex-wrap content-center mt-5'>
           {screenshots.results.slice(0, 4).map(screenshot => (
-            <img key={screenshot.id} src={screenshot.image} alt={screenshot.name} className='w-[20vw] h-[15vh] rounded-xl' />
+            <img key={screenshot.id} src={screenshot.image} alt={screenshot.name} className='w-[90vw] h-[20vh] lg:w-[23vw] lg:h-[21vh] rounded-xl' />
             ))
           }
         </div>
       </div>  
+      
+      <div className='bg-[#101216] w-screen py-5 mt-5'>
+          <h1 className='text-white font-mainFont text-3xl font-light text-start ms-4'>Requirements</h1>
+          <p className='text-white text-[0.8rem] w-[45ch] ms-5 mt-3'>{game.platforms[0].requirements.minimum.split('Additional Notes')[0]}</p>
+      </div>
     </div>
   );
 };
