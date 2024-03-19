@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 // Gamepg.js
 
@@ -221,6 +222,7 @@ const Gamepg = ({ setCartItems, cartItems }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
