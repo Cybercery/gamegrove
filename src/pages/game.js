@@ -156,7 +156,7 @@ const Gamepg = ({ setCartItems, cartItems }) => {
           Screenshots
         </h1>
         <div className="flex flex-row gap-[5vh] lg:gap-[2vw] justify-center flex-wrap content-center mt-5">
-          {screenshots.results.slice(0, 4).map((screenshot) => (
+          {screenshots.results.map((screenshot) => (
             <img
               key={screenshot.id}
               src={screenshot.image}
@@ -173,35 +173,50 @@ const Gamepg = ({ setCartItems, cartItems }) => {
             Requirements
           </h1>
           <div name="requirement-div" className="text-center font-mainFont">
-            <p className="text-white text-[0.8rem] lg:text-[1rem]">
-              {
-                game.platforms[0].requirements.minimum.split(
-                  "Additional Notes"
-                )[0]
-              }
-            </p>
-            <p className="text-white text-[0.8rem] lg:text-[1rem]">
-              {
-                game.platforms[0].requirements.recommended.split(
-                  "Additional Notes"
-                )[0]
-              }
-            </p>
+            {game.platforms[0].requirements.minimum ? (
+              <p className="text-white text-[0.8rem] lg:text-[1rem]">
+                {
+                  game.platforms[0].requirements.minimum.split(
+                    "Additional Notes"
+                  )[0]
+                }
+              </p>
+            ) : (
+              <p className="text-white text-[0.8rem] lg:text-[1rem]">
+                Minimum requirements not declared.
+              </p>
+            )}
+
+            {game.platforms[0].requirements.recommended ? (
+              <p className="text-white text-[0.8rem] lg:text-[1rem]">
+                {
+                  game.platforms[0].requirements.recommended.split(
+                    "Additional Notes"
+                  )[0]
+                }
+              </p>
+            ) : (
+              <p className="text-white text-[0.8rem] lg:text-[1rem]">
+                Recommended requirements not declared.
+              </p>
+            )}
           </div>
         </div>
-        <div className="bg-[#2C2E33] lg:h-[20rem] lg:flex lg:flex-col lg:items-center lg:justify-center  p-5 rounded-[2rem] lg:w-1/2 ">
+        <div className="bg-[#2C2E33] lg:h-[20rem] lg:flex lg:flex-col lg:items-center lg:justify-center p-5 rounded-[2rem] lg:w-1/2">
           <h1 className="text-white font-mainFont text-2xl lg:text-4xl font-light text-center pb-5">
             More Details
           </h1>
           <div>
-            <p className="text-white font-mainFont font-light text-center ">
-              Rating: {game.rating}
-            </p>
-            <p className="text-white font-mainFont font-light text-center ">
-              Metacritic Rating: {game.metacritic}
+            <p className="text-white font-mainFont font-light text-center">
+              Rating: {game.rating ? game.rating : "Not declared"}
             </p>
             <p className="text-white font-mainFont font-light text-center">
-              Publisher : {game.publishers[0].name}
+              Metacritic Rating:{" "}
+              {game.metacritic ? game.metacritic : "Not declared"}
+            </p>
+            <p className="text-white font-mainFont font-light text-center">
+              Publisher:{" "}
+              {game.publishers[0] ? game.publishers[0].name : "Not declared"}
             </p>
           </div>
         </div>
