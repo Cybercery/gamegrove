@@ -50,7 +50,7 @@ export const SearchBar = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="relative flex flex-col w-[35vw]">
+      <div className="relative flex flex-col lg:w-[35vw] w-[90vw]">
         <input
           className="w-full min-h-[2.5rem] bg-white rounded-full"
           type="text"

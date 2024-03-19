@@ -52,7 +52,9 @@ const Carouseel = () => {
           <h1 className="text-[#297fff] font-mainFont font-[450] text-[2rem] text-center mb-4 tracking-wide drop-shadow-2xl">
             Games
           </h1>
-          <div className="min-w-[70vw] max-w-[20vw] min-h-[3vh] max-h-[3vh] bg-white rounded-full mx-auto"></div>
+          <div className="text-center flex self-center">
+            <SearchBar />
+          </div>
           <h1 className="text-white text-[0.8rem] font-mainFont mt-3 font-light text-center tracking-wider drop-shadow-2xl">
             Ignite Your Imagination, Conquer Your Dreams!
           </h1>
